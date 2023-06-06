@@ -7,6 +7,9 @@ Example:
 
 
 ```C
+#include <sched.h>
+
+
 #define SEM_TEST	0x01
 
 
@@ -48,9 +51,10 @@ const __xdata uint8_t* __code tcbList[]=
 };
 
 
-void schedCpuSleep(uint32_t ms)
+void schedCpuSleep(uint32_t t)
 {
-	delay_ms(ms);
+	delay_ms(t);
+	currentTime+=t;
 }
 
 

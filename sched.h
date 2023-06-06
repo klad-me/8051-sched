@@ -9,9 +9,13 @@ typedef uint8_t sem_t;
 typedef void (*task_code_t)(void);
 
 
+// Список TCB (надо определить извне)
 extern const __xdata uint8_t* __code tcbList[];
 
+// Текущее время
 extern volatile __data uint32_t currentTime;
+
+// Флаги пробуждения задач
 extern volatile __data sem_t wakeFlags;
 
 
